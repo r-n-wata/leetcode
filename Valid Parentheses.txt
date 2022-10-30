@@ -1,0 +1,23 @@
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+  const stack = []
+  const newStr = [...s]
+  for(x of newStr){
+    let top 
+    if(x === '(' || x === '{' || x === '['){
+      stack.push(x)
+    }else{
+      top = stack[stack.length - 1]
+      if(top === '(' && x === ')' || top === '{' && x === '}' || top === '[' && x === ']'){
+        stack.pop()
+      }else{
+          return false
+      }
+    }
+  }
+
+  return stack.length === 0
+};
