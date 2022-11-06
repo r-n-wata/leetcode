@@ -1,0 +1,6 @@
+  const lastWord = s.trim().split(' ')
+  
+  // split variable to array and find the last word
+
+  return lastWord[lastWord.length -1].length
+};
